@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Smart School Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>SmartSchool</h2>
+    <ul>
+      <li onclick="showSection('dashboard')">Dashboard</li>
+      <li onclick="showSection('students')">Students</li>
+    </ul>
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+
+    <!-- Dashboard -->
+    <section id="dashboard">
+      <h1>Dashboard</h1>
+      <div class="cards">
+        <div class="card">Students: <span id="totalStudents">0</span></div>
+        <div class="card">Attendance: <span id="attendance">0%</span></div>
+      </div>
+    </section>
+
+    <!-- Students -->
+    <section id="students" style="display:none;">
+      <h1>Students</h1>
+
+      <input id="nameInput" placeholder="Enter name" />
+      <select id="classInput">
+        <option>10th</option>
+        <option>9th</option>
+        <option>8th</option>
+      </select>
+      <button onclick="addStudent()">Add</button>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Class</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="studentTable"></tbody>
+      </table>
+    </section>
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
